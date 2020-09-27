@@ -1,0 +1,19 @@
+#!/bin/bash
+
+dir=$(cd "$(dirname "$0")/.." && pwd)
+. "$dir/deploy/common.sh" || exit 1
+
+for host in "$@"; do
+	deploy_to "$host"
+
+	#
+	# You could choose to SSH in and run some set of confomat profiles
+	# here, or in a copy of this script that targets a specific host or set
+	# of hosts:
+	#
+	# ssh root@$host /root/confomat/bin/confomat pkgsrc base users
+	#
+
+	echo ok @ $host
+	echo
+done

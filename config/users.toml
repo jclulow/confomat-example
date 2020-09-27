@@ -1,0 +1,18 @@
+[users.example]
+class = "ops"
+gecos = "Captain Example"
+uid = 1234
+group = "nfsusers"
+profiles = [ "Primary Administrator" ]
+
+[users.example_service]
+class = "service"
+gecos = "Example Service"
+uid = 22001
+group = "example_service"
+home = "/var/opt/example"
+home_create = false
+
+[groups]
+nfsusers = { gid = 15000 }
+example_service = { gid = 22001 }

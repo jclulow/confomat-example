@@ -1,0 +1,10 @@
+pathdirs=(
+	"$HOME/bin"
+	'/opt/local/sbin'
+	'/opt/local/bin'
+	'/usr/sbin'
+	'/usr/bin'
+	'/sbin'
+)
+export PATH=$(IFS=':'; printf '%s' "${pathdirs[*]}")
+PS1='\u@\h \$ '
