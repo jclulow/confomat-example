@@ -7,7 +7,7 @@ fn role_base(c: &Context) -> Result<()> {
 
     c.ensure_dir("/root", ROOT, ROOT, 0o700)?;
 
-    enum Action { Remove };
+    enum Action { Remove }
     let root_profile = |srcname: &str, action: Action| -> Result<()> {
         let mut dst = PathBuf::from("/root");
         dst.push(&format!(".{}", srcname));
